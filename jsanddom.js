@@ -190,43 +190,53 @@
      var selectList = document.createElement("select");
      selectList.id = "mySelectID";
      mydiv.appendChild(selectList);
-     for(var i=0;i<array.length;i++){
+     for(var i=0;i<arr.length;i++){
           var option = document.createElement("option");
-          option.value = array[i];
-          option.text = array[i];
+          option.value = arr[i];
+          option.text = arr[i];
           selectList.appendChild(option);
      }
      var btn = document.createElement("button"); 
      btn.type = "button";
+     btn.innerHTML = "Click and View Result in Console";
      btn.onclick = function(){
           var el = document.getElementById("mySelectID");
           console.log(el.options[el.selectedIndex].text, el.options[el.selectedIndex].value);
      };
      mydiv.appendChild(btn);
-     
-     
+
      // Write 5 different jQuery selectors to retrieve the
      // sample anchor in the markup below.
+     $("a")
+     $(".link")
+     $("[href]")
+     $("div.buzz")
+     $("#fizz")
      
-
-
      // Programatically create an array with 5 items.  Create a list item for each item in the array
      // and add the list items to the unordered list with an id of "list1".
-     var arr = ["Tea", "Coffee", "Hot Choco", "Milk", "Soda"];
+     var arr = ["Tea", "Coffee", "Hot Chocolate", "Milk", "Soda"];
      var ulelm = document.getElementById("list1");
      for(var i=0;i<arr.length;++i){
           var lielm = document.createElement("li");
-          lielm.text = arr[i];
+          lielm.innerHTML = arr[i];
           ulelm.appendChild(lielm);
      }
-     
      
      // Use javascript to add a list of checkboxes and 2 links
      // to the div with an id of "foobar"
      // When the first link is clicked, all the checkboxes should be checked (i.e. check all)
      // When the second link is clicked, all the checkboxes should be unchecked (i.e. uncheck all)
-
-
+     var fbdiv = document.getElementById("foobar");
+     var arr1 = ["Cold Coffee", "Hot Chocolate", "Milk"];
+     for(var i=0;i<arr1.length;++i){
+          var chkbox = document.createElement("input");
+          chkbox.type = "checkbox";
+          chkbox.name = "Beverages";
+          chkbox.value = arr1[i];
+          chkbox.innerHTML = arr1[i];
+          fbdiv.appendChild(chkbox);
+     }
 
 
 
